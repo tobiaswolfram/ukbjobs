@@ -1,0 +1,18 @@
+Package: ukbjobs
+Title: Helpful Information on Occupations within UKB 
+Version: 0.0.0.9000
+Authors@R: 
+    c(
+    person("Tobias", "Wolfram", email = "twolfram.eisenach@gmail.com", role = c("aut", "cre"), 
+           comment = c(ORCID = "0000-0002-0280-2512")),
+    person("Evelina", "Akimova", email =  "evelina.akimova@sociology.ox.ac.uk", role = c("aut", "cre"), 
+           comment = c(ORCID = "0000-0001-8733-3745"))
+           )
+Author: Tobias Wolfram [aut, cre]
+        Evelina Akimova [aut, cre]
+Maintainer: Tobias Wolfram <twolfram.eisenach@gmail.com>     
+Description: Contextual information on occupations following the UK ONS SOC2000 structure. Aimed at researchers using the UK Biobank.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
