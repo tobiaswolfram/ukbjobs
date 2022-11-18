@@ -5,8 +5,8 @@
 #' Adds common occupational status measures (CAMSIS, SIOPS and ISEI) to the UKB data.
 #'
 #' @param ukb_data dataframe, containing ukb data
-#' @param soc2000_var string, denoting the UKB-variable that codes for occupation in SOC2000 format (i.e. job_code_at_visit_f20277_0_0)
-#' @param sex_var string, denoting the UKB-variable that codes for sex (i.e. sex_f31_0_0)
+#' @param soc2000_var string, denoting the UKB-variable that codes for occupation in SOC2000 format (i.e. `job_code_at_visit_f20277_0_0```)
+#' @param sex_var string, denoting the UKB-variable that codes for sex (i.e. `sex_f31_0_0`)
 #'
 #' @details A simple function that adds three well known measures of occupational status from the social stratification
 #' literature to the UKB, based on the occoupational information encoded in `soc2000_var`.
@@ -22,7 +22,7 @@
 #' The Cambridge Social Interaction and Stratification (CAMSIS, Lambert & Griffiths 2018) scale is based on the idea that differential association is an essential feature
 #' of social stratification arrangements. The usual approach to stratification theory is to define a structure composed of a set of classes or
 #' status groups and then to investigate social interaction between them. The CAMSIS approach reverses this, using patterns of interaction to determine
-#' the nature of the structure. Separate male and female CAMSIS scales exist, the function uses either the male or female scale depending on 'sex_var'.
+#' the nature of the structure. Separate male and female CAMSIS scales exist, the function uses either the male or female scale depending on `sex_var`.
 #'
 #' CAMSIS values are taken from http://www.camsis.stir.ac.uk/, SIOPS and ISEI are adapted from http://www.harryganzeboom.nl/isco88/ and converted from the
 #' ISCO88-scale to SOC2000 using the mapping found at http://www.camsis.stir.ac.uk/occunits/uksoc2000toisco88v3.sps. Note that ISEI and SIOPS scores
@@ -30,8 +30,11 @@
 #'
 #'
 #' Ganzeboom, Harry B. G./Donald, Treiman (1996), »Internationally Comparable Measures for Occupational Status for the 1988 International Standard Classification of Occupations«, Social Science Research 25, S. 201–239
+#'
 #' Ganzeboom, H.B.G. De Graaf, P.M. & Treiman, D.J. (1992): A Standard International Socio-Economic Index of Occupational Status. Social Science Research 21 (1), 1–56.
+#'
 #' Lambert, P. S., & Griffiths, D. (2018). Social Inequalities and Occupational Stratification: Methods and Concepts in the Analysis of Social Distance
+#'
 #' Treiman, Donald (1977), Occupational Prestige in Comparative Perspective, New York.
 #'
 #' @return ukb_data, with CAMSIS, SIOPS and ISEI added.
