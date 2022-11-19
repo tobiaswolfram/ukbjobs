@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ukbjobs - Occupational Information for the UK Biobank
+# ukbjobs - Occupational Information for the UK Biobank <img src="man/figures/logo.png" align="right" height="114" />
 
 <!-- badges: start -->
 <!-- badges: end -->
