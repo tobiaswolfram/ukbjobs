@@ -1,0 +1,12 @@
+citHeader("To cite ukbjobs in publications use:")
+
+citEntry(
+  entry    = "Misc",
+  title    = "ukbjobs - Occupational Information for the UK Biobank",
+  author   =  c("Tobias Wolfram", "Evelina Akimova"),
+  year     = 2022,
+  url      = "https://github.com/tobiaswolfram/ukbjobs",
+  textVersion = paste(
+
+  )
+)
