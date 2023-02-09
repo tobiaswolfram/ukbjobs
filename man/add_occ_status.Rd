@@ -7,11 +7,11 @@
 add_occ_status(ukb_data, soc2000_var, sex_var)
 }
 \arguments{
-\item{ukb_data}{dataframe, containing ukb data}
+\item{ukb_data}{A data frame containing UK Biobank data.}
 
-\item{soc2000_var}{string, denoting the UKB-variable that codes for occupation in SOC2000 format (i.e. `job_code_at_visit_f20277_0_0```)}
+\item{soc2000_var}{A character string indicating the column in \code{ukb_data} that contains the SOC2000 codes (i.e. `job_code_at_visit_f20277_0_0```).}
 
-\item{sex_var}{string, denoting the UKB-variable that codes for sex (i.e. \code{sex_f31_0_0})}
+\item{sex_var}{string, denoting the UKB-variable that codes for sex (i.e. \code{sex_f31_0_0}) with values being either "Male" or "Female"}
 }
 \value{
 ukb_data, with CAMSIS, SIOPS and ISEI added.
@@ -21,7 +21,7 @@ Adds common occupational status measures (CAMSIS, SIOPS and ISEI) to the UKB dat
 }
 \details{
 A simple function that adds three well known measures of occupational status from the social stratification
-literature to the UKB, based on the occoupational information encoded in \code{soc2000_var}.
+literature to the UKB, based on the occupational information encoded in \code{soc2000_var}.
 
 The International Socioeconomic Index  (ISEI, Ganzeboom et al. 1992) is a measure of status that is based on the scaling weights that maximize the (indirect) influence of
 education on income through occupation. The ISEI takes into account a person's education, occupation, and income, and assigns
@@ -34,11 +34,12 @@ social standing.
 The Cambridge Social Interaction and Stratification (CAMSIS, Lambert & Griffiths 2018) scale is based on the idea that differential association is an essential feature
 of social stratification arrangements. The usual approach to stratification theory is to define a structure composed of a set of classes or
 status groups and then to investigate social interaction between them. The CAMSIS approach reverses this, using patterns of interaction to determine
-the nature of the structure. Separate male and female CAMSIS scales exist, the function uses either the male or female scale depending on \code{sex_var}.
+the nature of the structure. Separate male and female CAMSIS scales exist, the function uses either the male or female scale depending on \code{sex_var} for each individual
+followig the recommendations of the CAMSIS team.
 
 CAMSIS values are taken from http://www.camsis.stir.ac.uk/, SIOPS and ISEI are adapted from http://www.harryganzeboom.nl/isco88/ and converted from the
 ISCO88-scale to SOC2000 using the mapping found at http://www.camsis.stir.ac.uk/occunits/uksoc2000toisco88v3.sps. Note that ISEI and SIOPS scores
-for military personnel (SOC2000 1171 and 3311) as well as Public service administrative professionals (SOC2000 2441) are available.
+for military personnel (SOC2000 1171 and 3311) as well as Public service administrative professionals (SOC2000 2441) are not available.
 
 Ganzeboom, Harry B. G./Donald, Treiman (1996), »Internationally Comparable Measures for Occupational Status for the 1988 International Standard Classification of Occupations«, Social Science Research 25, S. 201–239
 

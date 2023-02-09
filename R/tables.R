@@ -4,12 +4,12 @@
 #'
 #' Adds common occupational status measures (CAMSIS, SIOPS and ISEI) to the UKB data.
 #'
-#' @param ukb_data dataframe, containing ukb data
-#' @param soc2000_var string, denoting the UKB-variable that codes for occupation in SOC2000 format (i.e. `job_code_at_visit_f20277_0_0```)
-#' @param sex_var string, denoting the UKB-variable that codes for sex (i.e. `sex_f31_0_0`)
+#' @param ukb_data A data frame containing UK Biobank data.
+#' @param soc2000_var A character string indicating the column in `ukb_data` that contains the SOC2000 codes (i.e. `job_code_at_visit_f20277_0_0```).
+#' @param sex_var string, denoting the UKB-variable that codes for sex (i.e. `sex_f31_0_0`) with values being either "Male" or "Female"
 #'
 #' @details A simple function that adds three well known measures of occupational status from the social stratification
-#' literature to the UKB, based on the occoupational information encoded in `soc2000_var`.
+#' literature to the UKB, based on the occupational information encoded in `soc2000_var`.
 #'
 #' The International Socioeconomic Index  (ISEI, Ganzeboom et al. 1992) is a measure of status that is based on the scaling weights that maximize the (indirect) influence of
 #' education on income through occupation. The ISEI takes into account a person's education, occupation, and income, and assigns
@@ -22,11 +22,12 @@
 #' The Cambridge Social Interaction and Stratification (CAMSIS, Lambert & Griffiths 2018) scale is based on the idea that differential association is an essential feature
 #' of social stratification arrangements. The usual approach to stratification theory is to define a structure composed of a set of classes or
 #' status groups and then to investigate social interaction between them. The CAMSIS approach reverses this, using patterns of interaction to determine
-#' the nature of the structure. Separate male and female CAMSIS scales exist, the function uses either the male or female scale depending on `sex_var`.
+#' the nature of the structure. Separate male and female CAMSIS scales exist, the function uses either the male or female scale depending on `sex_var` for each individual
+#' followig the recommendations of the CAMSIS team.
 #'
 #' CAMSIS values are taken from http://www.camsis.stir.ac.uk/, SIOPS and ISEI are adapted from http://www.harryganzeboom.nl/isco88/ and converted from the
 #' ISCO88-scale to SOC2000 using the mapping found at http://www.camsis.stir.ac.uk/occunits/uksoc2000toisco88v3.sps. Note that ISEI and SIOPS scores
-#' for military personnel (SOC2000 1171 and 3311) as well as Public service administrative professionals (SOC2000 2441) are available.
+#' for military personnel (SOC2000 1171 and 3311) as well as Public service administrative professionals (SOC2000 2441) are not available.
 #'
 #'
 #' Ganzeboom, Harry B. G./Donald, Treiman (1996), »Internationally Comparable Measures for Occupational Status for the 1988 International Standard Classification of Occupations«, Social Science Research 25, S. 201–239
@@ -54,3 +55,32 @@ add_occ_status <- function(ukb_data, soc2000_var, sex_var){
   merged
 
 }
+
+
+#' Add ISCO-88 occupation codes
+#'
+#' Matches SOC2000 codes to ISCO-88, the 1988 version of the International Standard Classification of Occupations.
+#'
+#' @param ukb_data A data frame containing UK Biobank data.
+#' @param soc2000_var A character string indicating the column in `ukb_data` that contains the SOC2000 codes (i.e. `job_code_at_visit_f20277_0_0```).
+#'
+#' @details ISCO-88 is a standardized classification of occupations used internationally.
+#' It provides a comprehensive and systematic way of classifying different jobs.
+#' The ISCO-88 classification has four levels, ranging from the most general to the most specific and
+#' its codes are widely used in social sciences, organizational psychology and human resource management.
+#' By matching SOC2000 codes to ISCO-88, this function allows the researcher to link the UKB to
+#' data with the internationally most common standardized occupation classification system.
+#' The mapping is based on the .sps-file provided at http://www.camsis.stir.ac.uk/occunits/uksoc2000toisco88v3.sps.
+#'
+#' @return A data frame with the UK Biobank data merged with the ISCO-88 occupation, based on the SOC2000 codes.
+#' @export
+add_isco88 <- function(ukb_data, soc2000_var){
+
+  data("soc2000_isco88" , envir=environment())
+
+  merge(ukb_data, soc2000_occ_status, by.y= "soc2000", by.x = soc2000_var)
+
+}
+
+
+
