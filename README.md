@@ -34,7 +34,9 @@ Information on UKB respondents’ was measured using the SOC2000 structure
 cases.
 
 In this package, we provide a collection of helpful external information
-on occupations that can be merged to UKB via SOC2000.
+on occupations that can be merged to UKB via SOC2000. While currently
+focused on occupational status, the set of available resources will be
+extended over time.
 
 ## Installation
 
