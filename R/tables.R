@@ -42,9 +42,17 @@
 #' @export
 add_occ_status <- function(ukb_data, soc2000_var, sex_var){
 
+  if (!soc2000_var %in% names(ukb_data)) {
+    stop("Error: The specified soc2000_var does not exist in the ukb_data")
+  }
+
+  if (!sex_var %in% names(ukb_data)) {
+    stop("Error: The specified sex_var does not exist in the ukb_data")
+  }
+
   data("soc2000_occ_status", envir=environment())
 
-  merged <- merge(ukb_data, soc2000_occ_status, by.y= "soc2000", by.x = soc2000_var)
+  merged <- merge(ukb_data, soc2000_occ_status, by.y= "soc2000", by.x = soc2000_var, all.x = TRUE)
 
   merged$camsis <- ifelse(merged[[sex_var]] == "Male", merged$mcamsis, merged$fcamsis)
   merged$camsis <- ifelse(is.na(merged[[sex_var]]), NA, merged$camsis)
@@ -52,8 +60,9 @@ add_occ_status <- function(ukb_data, soc2000_var, sex_var){
   merged$mcamsis <- NULL
   merged$fcamsis <- NULL
 
-  merged
+  cat(paste0(nrow(merged) - sum(is.na(merged$camsis)), " cases in ukb_data were successfully matched and updated."))
 
+  merged
 }
 
 
@@ -76,9 +85,13 @@ add_occ_status <- function(ukb_data, soc2000_var, sex_var){
 #' @export
 add_isco88 <- function(ukb_data, soc2000_var){
 
+  if (!soc2000_var %in% names(ukb_data)) {
+    stop("Error: The specified soc2000_var does not exist in the ukb_data")
+  }
+
   data("soc2000_isco88" , envir=environment())
 
-  merge(ukb_data, soc2000_occ_status, by.y= "soc2000", by.x = soc2000_var)
+  merge(ukb_data, soc2000_occ_status, by.y= "soc2000", by.x = soc2000_var, all.x = TRUE)
 
 }
 
