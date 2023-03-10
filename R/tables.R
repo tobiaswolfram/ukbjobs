@@ -5,7 +5,7 @@
 #' Adds common occupational status measures (CAMSIS, SIOPS and ISEI) to the UKB data.
 #'
 #' @param ukb_data A data frame containing UK Biobank data.
-#' @param soc2000_var A character string indicating the column in `ukb_data` that contains the SOC2000 codes (i.e. `job_code_at_visit_f20277_0_0```).
+#' @param soc2000_var A character string indicating the column in `ukb_data` that contains the SOC2000 codes (i.e. `job_code_at_visit_f20277_0_0`).
 #' @param sex_var string, denoting the UKB-variable that codes for sex (i.e. `sex_f31_0_0`) with values being either "Male" or "Female"
 #'
 #' @details A simple function that adds three well known measures of occupational status from the social stratification
@@ -71,7 +71,7 @@ add_occ_status <- function(ukb_data, soc2000_var, sex_var){
 #' Matches SOC2000 codes to ISCO-88, the 1988 version of the International Standard Classification of Occupations.
 #'
 #' @param ukb_data A data frame containing UK Biobank data.
-#' @param soc2000_var A character string indicating the column in `ukb_data` that contains the SOC2000 codes (i.e. `job_code_at_visit_f20277_0_0```).
+#' @param soc2000_var A character string indicating the column in `ukb_data` that contains the SOC2000 codes (i.e. `job_code_at_visit_f20277_0_0`).
 #'
 #' @details ISCO-88 is a standardized classification of occupations used internationally.
 #' It provides a comprehensive and systematic way of classifying different jobs.

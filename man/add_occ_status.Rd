@@ -9,7 +9,7 @@ add_occ_status(ukb_data, soc2000_var, sex_var)
 \arguments{
 \item{ukb_data}{A data frame containing UK Biobank data.}
 
-\item{soc2000_var}{A character string indicating the column in \code{ukb_data} that contains the SOC2000 codes (i.e. `job_code_at_visit_f20277_0_0```).}
+\item{soc2000_var}{A character string indicating the column in \code{ukb_data} that contains the SOC2000 codes (i.e. \code{job_code_at_visit_f20277_0_0}).}
 
 \item{sex_var}{string, denoting the UKB-variable that codes for sex (i.e. \code{sex_f31_0_0}) with values being either "Male" or "Female"}
 }

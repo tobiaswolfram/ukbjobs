@@ -9,7 +9,7 @@ add_isco88(ukb_data, soc2000_var)
 \arguments{
 \item{ukb_data}{A data frame containing UK Biobank data.}
 
-\item{soc2000_var}{A character string indicating the column in \code{ukb_data} that contains the SOC2000 codes (i.e. `job_code_at_visit_f20277_0_0```).}
+\item{soc2000_var}{A character string indicating the column in \code{ukb_data} that contains the SOC2000 codes (i.e. \code{job_code_at_visit_f20277_0_0}).}
 }
 \value{
 A data frame with the UK Biobank data merged with the ISCO-88 occupation, based on the SOC2000 codes.
