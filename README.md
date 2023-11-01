@@ -34,9 +34,13 @@ Information on UKB respondents’ was measured using the SOC2000 structure
 cases.
 
 In this package, we provide a collection of helpful external information
-on occupations that can be merged to UKB via SOC2000. While currently
-focused on occupational status, the set of available resources will be
-extended over time.
+on occupations that can be merged to UKB via SOC2000. This includes the
+three occupational status metrics CAMSIS, SIOPS and ISEI, as well as a
+mapping of SOC2000 to the international ISCO-88 occupational
+classification. Furthermore we make information on occupational means
+the big 5 personality dimensions, risk taking, mental health,
+gratification delay and self efficacy based on estimates by Wolfram
+(2023) available.
 
 ## Installation
 
@@ -56,7 +60,7 @@ devtools::install_github("tobiaswolfram/ukbjobs")
 
 Elias, Peter, Abigail McKnight, Rhys Davies, and Graham Kinshott. 2000.
 “The Revision of the Standard Occupational Classification from Its 1990
-Version to Soc2000.” *Labour Market Trends* 108: 563–72.
+Version to SOC2000.” *Labour Market Trends* 108: 563–72.
 
 </div>
 
@@ -65,6 +69,7 @@ Version to Soc2000.” *Labour Market Trends* 108: 563–72.
 Faragher, E Brian, Monica Cass, and Cary L Cooper. 2013. “The
 Relationship Between Job Satisfaction and Health: A Meta-Analysis.”
 *From Stress to Wellbeing Volume 1*, 254–71.
+<https://doi.org/10.1057/9781137310651_12>.
 
 </div>
 
@@ -73,6 +78,7 @@ Relationship Between Job Satisfaction and Health: A Meta-Analysis.”
 Hauser, Robert Mason, and John Robert Warren. 1997. “Socioeconomic
 Indexes for Occupations: A Review, Update, and Critique.” *Sociological
 Methodology* 27 (1): 177–298.
+<https://doi.org/10.1111/1467-9531.271028>.
 
 </div>
 
@@ -80,7 +86,7 @@ Methodology* 27 (1): 177–298.
 
 Lambert, Paul, and Dave Griffiths. 2018. *Social Inequalities and
 Occupational Stratification: Methods and Concepts in the Analysis of
-Social Distance*. Springer.
+Social Distance*. London: Palgrave Macmillan.
 
 </div>
 
@@ -96,6 +102,7 @@ Inequality*. Emerald Group Publishing Limited.
 
 ———. 2018. “The Wear and Tear on Health: What Is the Role of
 Occupation?” *Health Economics* 27 (2): e69–86.
+<https://doi.org/10.1002/hec.3563>.
 
 </div>
 
@@ -105,6 +112,16 @@ Sudlow, Cathie, John Gallacher, Naomi Allen, Valerie Beral, Paul Burton,
 John Danesh, Paul Downey, et al. 2015. “UK Biobank: An Open Access
 Resource for Identifying the Causes of a Wide Range of Complex Diseases
 of Middle and Old Age.” *PLoS Medicine* 12 (3): e1001779.
+<https://doi.org/10.1371/journal.pmed.1001779>.
+
+</div>
+
+<div id="ref-wolfram2023not" class="csl-entry">
+
+Wolfram, Tobias. 2023. “(Not Just) Intelligence Stratifies the
+Occupational Hierarchy: Ranking 360 Professions by IQ and Non-Cognitive
+Traits.” *Intelligence* 98: 101755.
+<https://doi.org/10.1016/j.intell.2023.101755>.
 
 </div>
 

@@ -107,7 +107,7 @@ add_isco88 <- function(ukb_data, soc2000_var){
 #' @param soc2000_var A character string indicating the column in `ukb_data` that contains the SOC2000 codes (i.e. `job_code_at_visit_f20277_0_0`).
 #'
 #' @details Wolfram (2023) estimated occupational means of cognitive ability, the big 5 personality dimensions, risk taking, mental health,
-#' gratification delay and self efficacy for 360 occupations in Great Britain using the SOC2010.
+#' gratification delay and self efficacy for 360 occupations in Great Britain using the SOC2010 classification.
 #' By relying on the official crosswalks, we converted these values back to SOC2000.
 #'
 #' Wolfram, T. (2023). (Not just) Intelligence stratifies the occupational hierarchy: Ranking 360 professions by IQ and non-cognitive traits. Intelligence, 98, 101755.

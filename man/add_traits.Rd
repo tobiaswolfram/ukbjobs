@@ -19,7 +19,7 @@ Matches SOC2000 codes to british occupational means of cognition and non-cogniti
 }
 \details{
 Wolfram (2023) estimated occupational means of cognitive ability, the big 5 personality dimensions, risk taking, mental health,
-gratification delay and self efficacy for 360 occupations in Great Britain using the SOC2010.
+gratification delay and self efficacy for 360 occupations in Great Britain using the SOC2010 classification.
 By relying on the official crosswalks, we converted these values back to SOC2000.
 
 Wolfram, T. (2023). (Not just) Intelligence stratifies the occupational hierarchy: Ranking 360 professions by IQ and non-cognitive traits. Intelligence, 98, 101755.

@@ -1,6 +1,6 @@
 ---
 output: github_document
-bibliography: library.bib
+bibliography: bib.bib
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -24,7 +24,7 @@ The UK Biobank [UKB, @sudlow2015uk] is a large-scale biomedical research project
 
 Information on UKB respondents' was measured using the SOC2000 structure [@elias2000revision] and occupation is available for the majority of cases. 
 
-In this package, we provide a collection of helpful external information on occupations that can be merged to UKB via SOC2000. While currently focused on occupational status, the set of available resources will be extended over time.
+In this package, we provide a collection of helpful external information on occupations that can be merged to UKB via SOC2000. This includes the three occupational status metrics CAMSIS, SIOPS and ISEI, as well as a mapping of SOC2000 to the international ISCO-88 occupational classification. Furthermore we make information on occupational means the big 5 personality dimensions, risk taking, mental health, gratification delay and self efficacy based on estimates by @wolfram2023not available. 
 
 ## Installation
 
