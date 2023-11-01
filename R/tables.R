@@ -91,9 +91,42 @@ add_isco88 <- function(ukb_data, soc2000_var){
 
   data("soc2000_isco88" , envir=environment())
 
-  merge(ukb_data, soc2000_occ_status, by.y= "soc2000", by.x = soc2000_var, all.x = TRUE)
+  merged <- merge(ukb_data, soc_isco, by.y= "soc2000", by.x = soc2000_var, all.x = TRUE)
 
+  cat(paste0(nrow(merged) - sum(is.na(merged$isco88)), " cases in ukb_data were successfully matched and updated."))
+
+  merged
 }
 
 
+#' Add cognitive and non-cognitive traits
+#'
+#' Matches SOC2000 codes to british occupational means of cognition and non-cognitive traits.
+#'
+#' @param ukb_data A data frame containing UK Biobank data.
+#' @param soc2000_var A character string indicating the column in `ukb_data` that contains the SOC2000 codes (i.e. `job_code_at_visit_f20277_0_0`).
+#'
+#' @details Wolfram (2023) estimated occupational means of cognitive ability, the big 5 personality dimensions, risk taking, mental health,
+#' gratification delay and self efficacy for 360 occupations in Great Britain using the SOC2010.
+#' By relying on the official crosswalks, we converted these values back to SOC2000.
+#'
+#' Wolfram, T. (2023). (Not just) Intelligence stratifies the occupational hierarchy: Ranking 360 professions by IQ and non-cognitive traits. Intelligence, 98, 101755.
+#'
+#'
+#' @return A data frame with the UK Biobank data merged with the information on cognition and non-cognitive traits.
+#' @export
+add_traits <- function(ukb_data, soc2000_var){
+
+  if (!soc2000_var %in% names(ukb_data)) {
+    stop("Error: The specified soc2000_var does not exist in the ukb_data")
+  }
+
+  data("soc2000_traits" , envir=environment())
+
+  merged <- merge(ukb_data, soc00_traits, by.y= "soc2000", by.x = soc2000_var, all.x = TRUE)
+
+  cat(paste0(nrow(merged) - sum(is.na(merged$big_5_agreeableness)), " cases in ukb_data were successfully matched and updated."))
+
+  merged
+}
 

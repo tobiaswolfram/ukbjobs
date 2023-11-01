@@ -2,3 +2,4 @@
 
 export(add_isco88)
 export(add_occ_status)
+export(add_traits)
